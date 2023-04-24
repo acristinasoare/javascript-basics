@@ -20,44 +20,88 @@ function one(a,b) {
 }
 
 function truthiness(a) {
-  // your code here
+  if (a) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 function isEqual(a, b) {
-  // your code here
+  if (a===b){
+    return true;
+  } else {
+    return false;
+  }
 };
 
 function isGreaterThan(a, b) {
-  // your code here
+  if (a>b){
+    return true;
+  } else {
+    return false;
+  }
 };
 
 function isLessThanOrEqualTo(a, b) {
-  // your code here
+  if (a<=b) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 function isOdd(a) {
-  // your code here
+  if (a%2 !== 0) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 function isEven(a) {
-  // your code here
+  if (a%2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 function isSquare(a) {
-  // your code here
+  if (Number.isInteger(Math.sqrt(a))){
+    return true;
+  } else {
+    return false;
+  }
 };
 
 function startsWith(char, string) {
-  // your code here
+  const a = char.length;
+  const b = string.substring(0,a);
+  if (char===b) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 function containsVowels(string) {
-  // your code here
+  const n = string.search(/[aeiou]/i);
+  if (n >= 0) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 function isLowerCase(string) {
-  // your code here
-};
+  const strToLowerCase = string.toLowerCase();
+  if (strToLowerCase === string) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 module.exports = {
   negate,
