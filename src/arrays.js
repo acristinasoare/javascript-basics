@@ -7,7 +7,7 @@ const arrayToCSVString = array => {
   
   //creates a new string from an array by concatanating all the elements of the array; by default it 
   //uses a comma as a separator, but you can specify what separators you want to be added between the items. eg join() - comma but no space, 
-  //join(, ), join (-)
+  //join(, ), join (-), join ('') no space, no comma , join (' ') space but no comma 
 };
 
 const csvStringToArray = string => {
@@ -60,32 +60,67 @@ const uppercaseWordsInArray = strings => {
 }
 
 const reverseWordsInArray = strings => {
-  // your code here
+  return strings.map(string => string.split('').reverse().join(''))
+  
 };
+
+//map takes every element in the strings array and applies the split,reverse and join functions on each element
+//split creates an array with every letter as an element of an array ie ['c', 'a', 't']
+//reverse reverses the order of the letters in the array ['t', 'a', 'c']
+//join converts the array back into a string 'tac' 
 
 const onlyEven = numbers => {
-  // your code here
+  return numbers.filter(number => number % 2 === 0)
 };
+
+// The filter() method creates a shallow copy of a portion of a given array,
+// filtered down to just the elements from the given array that pass the test implemented by the provided function.
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  const arrayCopy = array.slice();
+  arrayCopy.splice(index,1);
+  return arrayCopy;
 };
 
+ //returns an array with the nth element removed, and does not mutate the original 
+ //.slice() makes a copy of the original array
+ //. .splice(index,1) removes 1 element at the specified index x
+
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  return strings.filter(string => string.toLowerCase().startsWith('a') || string.toLowerCase().startsWith('e') || string.toLowerCase().startsWith('i') || string.toLowerCase().startsWith('o') || string.toLowerCase().startsWith('u'))
+  
 };
 
 const removeSpaces = string => {
-  // your code here
+  return string.split(' ').join('');
+ 
 };
+
+//split(' ') creates an array with the string words as elements; inverted commas and space (' ') instruct split() to separate string into elements 
+//where there is a space in the string
+//join ('') joins the elements of the array into a string, inverted commas with no space instructs join() to merge elements with no space between, 
 
 const sumNumbers = numbers => {
-  // your code here
+  return numbers.reduce((accumulator, number) => accumulator + number)
+
 };
 
+// .reduce method executes a callback fn on every element of the array and returns one value 
+
 const sortByLastLetter = strings => {
-  // your code here
+  function compareFunction(a, b) {
+    return a.charCodeAt(a.length-1) - b.charCodeAt(b.length-1)
+  }
+  return strings.sort(compareFunction)
 };
+
+//sort() sorts the elements of an array 
+//syntax sort() sort(compareFn)
+//if no compareFn supplied will convert array elements into strings and compare strings in UTF-16 code units order
+//compareFn(a,b) return value > 0, sort a after b
+//compareFn(a,b) return value < 0, sort a before b
+//compareFn(a.b) return value ===0, keep original order of a b
+
 
 module.exports = {
   getNthElement,
