@@ -1,13 +1,13 @@
 function add (a, b) {
-    return a+b;
+  return a+b;
 }
 
 function subtract (a, b) {
-   return a-b;
+  return a-b;
 }
 
 function multiply (a, b) {
-   return a * b; 
+  return a * b; 
 }
 
 function divide (a, b) {
@@ -15,8 +15,7 @@ function divide (a, b) {
 }
 
 function power (a, b) {
-  return Math.pow(a,b);
-  
+  return a**b;
 }
 
 function round (a) {
@@ -37,9 +36,8 @@ function absolute (a) {
 }
 
 function quotient (a, b) {
-  const c = a/b;
-  return Math.trunc(c);
-  }
+  return Math.trunc(a/b);
+}
 
 function remainder (a, b) {
   return a%b;

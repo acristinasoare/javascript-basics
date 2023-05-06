@@ -1,7 +1,7 @@
 const createPerson = (name, age) => {
   return {
-    'name': name,
-    'age': age
+    name,
+    age
   }
 }
 
@@ -14,11 +14,11 @@ const getProperty = (property, object) => {
 };
 
 const hasProperty = (property, object) => {
-  return object.hasOwnProperty(property);
+  return !!object[property];
 };
 
 const isOver65 = person => {
- return person.age > 65 ? true : false; 
+ return person.age > 65; 
 };
 
 const getAges = people => {
@@ -37,19 +37,16 @@ const averageAge = people => {
   const agesArray = people.map(person => person.age);
   const agesTotal = agesArray.reduce((accumulator, age) => accumulator + age);
   return agesTotal / people.length;
-
-  
 };
 
 const createTalkingPerson = (name, age) => { 
   return {
-    'name' : name,
-    'age' : age,
-    'introduce' : otherName => {
+    name,
+    age,
+    introduce: otherName => {
       return `Hi ${otherName}, my name is ${name} and I am ${age}!`;
     }
-    }
- 
+  }
 };
 
 // use template literals `` to insert another variable in the string by using placeholders of the form ${expression} 

@@ -11,18 +11,15 @@ function lowercase (string) {
 };
 
 function countCharacters (string) {
-  const str = string;
-  return str.length; 
+  return string.length; 
 };
 
 function firstCharacter (string) {
-  const str = string;
-  return str.charAt(0);
+  return string.charAt(0);
 };
 
 function firstCharacters (string, n) {
-  const str = string;
-  return str.substring(0,n);
+  return string.substring(0,n);
 
 };
 
